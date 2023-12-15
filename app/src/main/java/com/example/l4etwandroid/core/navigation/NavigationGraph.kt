@@ -1,4 +1,4 @@
-package com.example.l4etwandroid.navigation
+package com.example.l4etwandroid.core.navigation
 
 import com.example.l4etwandroid.compose.LoginScreen
 import com.example.l4etwandroid.compose.SplashScreen

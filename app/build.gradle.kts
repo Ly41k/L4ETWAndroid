@@ -67,4 +67,7 @@ dependencies {
     implementation("io.github.alexgladkov:odyssey-core:1.3.40") // For core classes
     implementation("io.github.alexgladkov:odyssey-compose:1.3.40") // For compose extensions
 
+    implementation("org.kodein.di:kodein-di:7.20.2")
+
+
 }
