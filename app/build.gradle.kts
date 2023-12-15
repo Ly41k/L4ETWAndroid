@@ -63,4 +63,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("io.github.alexgladkov:odyssey-core:1.3.40") // For core classes
+    implementation("io.github.alexgladkov:odyssey-compose:1.3.40") // For compose extensions
+
 }
