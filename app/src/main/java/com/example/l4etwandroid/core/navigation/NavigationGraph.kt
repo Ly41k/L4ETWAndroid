@@ -1,8 +1,7 @@
 package com.example.l4etwandroid.core.navigation
 
-import com.example.l4etwandroid.compose.LoginScreen
-import com.example.l4etwandroid.compose.SplashScreen
-import com.example.l4etwandroid.core.navigation.NavigationTree
+import com.example.l4etwandroid.compose.auth.LoginScreen
+import com.example.l4etwandroid.compose.splash.SplashScreen
 import ru.alexgladkov.odyssey.compose.extensions.screen
 import ru.alexgladkov.odyssey.compose.navigation.RootComposeBuilder
 

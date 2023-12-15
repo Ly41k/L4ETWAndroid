@@ -1,4 +1,4 @@
-package com.example.l4etwandroid.compose
+package com.example.l4etwandroid.compose.splash
 
 import androidx.compose.runtime.Composable
 import com.example.l4etwandroid.core.navigation.NavigationTree
