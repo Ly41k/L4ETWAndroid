@@ -1,4 +1,4 @@
-package com.example.l4etwandroid.compose.auth.login.models
+package com.example.l4etwandroid.presentation.auth.login.models
 
 sealed class LoginEvent {
     data class EmailChanged(val value: String) : LoginEvent()

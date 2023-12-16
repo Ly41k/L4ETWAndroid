@@ -21,8 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.l4etwandroid.compose.auth.login.models.LoginEvent
-import com.example.l4etwandroid.compose.auth.login.models.LoginViewState
+import com.example.l4etwandroid.presentation.auth.login.models.LoginEvent
+import com.example.l4etwandroid.presentation.auth.login.models.LoginViewState
 import com.example.l4etwandroid.ui.widget.CommonTextField
 
 @Composable

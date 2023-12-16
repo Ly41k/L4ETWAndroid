@@ -2,10 +2,10 @@ package com.example.l4etwandroid.presentation.auth.login
 
 import com.adeo.kviewmodel.BaseSharedViewModel
 import com.example.l4etwandroid.api.auth.AuthRepository
-import com.example.l4etwandroid.compose.auth.login.models.LoginAction
-import com.example.l4etwandroid.compose.auth.login.models.LoginEvent
-import com.example.l4etwandroid.compose.auth.login.models.LoginViewState
 import com.example.l4etwandroid.core.di.Inject
+import com.example.l4etwandroid.presentation.auth.login.models.LoginAction
+import com.example.l4etwandroid.presentation.auth.login.models.LoginEvent
+import com.example.l4etwandroid.presentation.auth.login.models.LoginViewState
 import kotlinx.coroutines.launch
 
 class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEvent>(

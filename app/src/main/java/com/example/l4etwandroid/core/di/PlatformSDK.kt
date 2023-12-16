@@ -3,6 +3,7 @@ package com.example.l4etwandroid.core.di
 import com.example.l4etwandroid.core.ktor.ktorModule
 import com.example.l4etwandroid.core.settings.settingsModule
 import com.example.l4etwandroid.data.auth.authModule
+import com.example.l4etwandroid.data.task.taskModule
 import org.kodein.di.DI
 import org.kodein.di.bind
 import org.kodein.di.direct
@@ -22,7 +23,8 @@ object PlatformSDK {
                     coreModule,
                     ktorModule,
                     authModule,
-                    settingsModule
+                    settingsModule,
+                    taskModule
                 )
             }.direct
         )

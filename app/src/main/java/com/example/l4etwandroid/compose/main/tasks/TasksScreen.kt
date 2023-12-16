@@ -1,10 +1,23 @@
 package com.example.l4etwandroid.compose.main.tasks
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import com.adeo.kviewmodel.compose.observeAsState
+import com.adeo.kviewmodel.odyssey.StoredViewModel
+import com.example.l4etwandroid.presentation.main.task.TaskViewModel
+import ru.alexgladkov.odyssey.compose.local.LocalRootController
 
 @Composable
 fun TasksScreen() {
-    Text(text = "TasksScreen", color = Color.Red )
+    val rootController = LocalRootController.current
+
+    StoredViewModel(factory = { TaskViewModel() }) { viewModel ->
+        val state = viewModel.viewStates().observeAsState()
+        val action = viewModel.viewActions().observeAsState()
+
+        TasksView(state = state.value) { viewModel.obtainEvent(it) }
+
+        when (action.value) {
+            null -> {}
+        }
+    }
 }
