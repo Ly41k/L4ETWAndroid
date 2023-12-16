@@ -84,9 +84,10 @@ dependencies {
     implementation("com.russhwolf:multiplatform-settings:1.1.1")
     implementation("com.russhwolf:multiplatform-settings-no-arg:1.1.1")
 
-
-
-
+    val kviewmodelVersion = "0.14"
+    implementation("com.adeo:kviewmodel:$kviewmodelVersion")
+    implementation("com.adeo:kviewmodel-compose:$kviewmodelVersion")
+    implementation("com.adeo:kviewmodel-odyssey:$kviewmodelVersion")
 
 
 }

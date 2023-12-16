@@ -2,11 +2,15 @@ package com.example.l4etwandroid.core.navigation
 
 object NavigationTree {
 
-    enum class Splash{
+    enum class Splash {
         SplashScreen
     }
 
-    enum class Auth{
+    enum class Auth {
         LoginScreen
+    }
+
+    enum class Main {
+        TasksScreen
     }
 }
