@@ -11,6 +11,6 @@ object NavigationTree {
     }
 
     enum class Main {
-        TasksScreen
+        TasksScreen, AddOrEditTaskScreen
     }
 }

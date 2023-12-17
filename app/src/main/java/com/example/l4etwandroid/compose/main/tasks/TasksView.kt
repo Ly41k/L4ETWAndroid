@@ -33,7 +33,7 @@ fun TasksView(state: TaskViewState, eventHandler: (TaskEvent) -> Unit) {
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { eventHandler(TaskEvent.AddTaskClick) },
+                onClick = { if (!state.isSending) eventHandler(TaskEvent.AddTaskClick) },
                 shape = RoundedCornerShape(20.dp),
                 modifier = Modifier.padding(bottom = 20.dp)
             ) {
@@ -67,10 +67,14 @@ fun TasksView(state: TaskViewState, eventHandler: (TaskEvent) -> Unit) {
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    RadioButton(selected = true, onClick = { })
+                    RadioButton(selected = state.isTitleSorting, onClick = {
+                        eventHandler(TaskEvent.SortingChanged)
+                    })
                     Text(text = "by Title")
 
-                    RadioButton(selected = false, onClick = { })
+                    RadioButton(selected = !state.isTitleSorting, onClick = {
+                        eventHandler(TaskEvent.SortingChanged)
+                    })
                     Text(text = "by Date")
                 }
             }
@@ -78,8 +82,12 @@ fun TasksView(state: TaskViewState, eventHandler: (TaskEvent) -> Unit) {
             items(state.tasks) { item: TaskItem ->
                 TaskItemView(
                     item = item,
-                    onEditTaskClick = { eventHandler(TaskEvent.EditTaskClick(it)) },
-                    onDeleteTaskClick = { eventHandler(TaskEvent.DeleteTaskClick(it)) }
+                    onEditTaskClick = {
+                        if (!state.isSending) eventHandler(TaskEvent.EditTaskClick(it))
+                    },
+                    onDeleteTaskClick = {
+                        if (!state.isSending) eventHandler(TaskEvent.DeleteTaskClick(it))
+                    }
                 )
             }
         }

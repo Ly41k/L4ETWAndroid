@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.l4etwandroid.core.utils.formatWithPattern
 import com.example.l4etwandroid.domain.TaskItem
 
 @Composable
@@ -38,7 +39,7 @@ fun TaskItemView(
             ) {
                 Text(text = item.title)
                 Text(text = item.description)
-                Text(text = item.date.toString())
+                Text(text = item.date?.formatWithPattern().orEmpty())
             }
             Box(modifier = Modifier.clickable { onEditTaskClick(item.id) }) {
                 Icon(

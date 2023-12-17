@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.l4etwandroid"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
