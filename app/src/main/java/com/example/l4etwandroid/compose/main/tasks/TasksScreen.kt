@@ -34,11 +34,18 @@ fun TasksScreen() {
                 viewModel.clearAction()
             }
 
-            null -> {}
+
             TaskAction.Logout -> rootController.findRootController().present(
                 screen = NavigationTree.Auth.LoginScreen.name,
                 launchFlag = LaunchFlag.SingleNewTask
             )
+
+            TaskAction.OpenEditProfile -> {
+                rootController.present(screen = NavigationTree.Main.EditProfile.name)
+                viewModel.clearAction()
+            }
+
+            null -> {}
         }
 
         LaunchedEffect(Unit) { viewModel.obtainEvent(TaskEvent.ScreenLoaded) }

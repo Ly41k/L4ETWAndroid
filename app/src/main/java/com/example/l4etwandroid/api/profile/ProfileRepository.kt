@@ -4,7 +4,6 @@ import com.example.l4etwandroid.domain.ProfileItem
 
 interface ProfileRepository {
     suspend fun getProfile()
-    suspend fun updateTask(item: ProfileItem)
-
+    suspend fun updateProfile(item: ProfileItem)
     fun logout()
 }

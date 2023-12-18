@@ -23,5 +23,4 @@ fun AddOrEditScreen(taskId: Long? = null) {
             null -> {}
         }
     }
-
 }

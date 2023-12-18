@@ -1,6 +1,5 @@
 package com.example.l4etwandroid.data.profile
 
-import android.util.Log
 import com.example.l4etwandroid.api.profile.ProfileRepository
 import com.example.l4etwandroid.core.store.ClearableBaseStore
 import com.example.l4etwandroid.core.utils.LogoutHelper
@@ -15,13 +14,12 @@ class ProfileRepositoryImpl(
 ) : ProfileRepository {
     override suspend fun getProfile() {
         val response = remoteDataSource.performGetProfile()
-        Log.d("TESTING_TAG", "response - $response")
         val profile =
             ProfileItem(firstName = response.firstName, lastName = response.lastName, countryId = response.countryId)
         profileStore.publish(profile)
     }
 
-    override suspend fun updateTask(item: ProfileItem) {
+    override suspend fun updateProfile(item: ProfileItem) {
         remoteDataSource.performUpdateProfile(item.toProfileRequest())
         getProfile()
     }

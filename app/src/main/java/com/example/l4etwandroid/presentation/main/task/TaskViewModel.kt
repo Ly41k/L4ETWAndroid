@@ -57,7 +57,6 @@ class TaskViewModel : BaseSharedViewModel<TaskViewState, TaskAction, TaskEvent>(
             .flowOn(Dispatchers.Default)
             .launchIn(viewModelScope)
 
-
         taskStore.observe().onStart { }
             .combine(isTitleSorting) { tasks, _ -> tasks }
             .map { tasks ->
@@ -93,8 +92,6 @@ class TaskViewModel : BaseSharedViewModel<TaskViewState, TaskAction, TaskEvent>(
                 viewState.copy(isSending = false)
             }
         }
-
-
     }
 
     override fun obtainEvent(viewEvent: TaskEvent) {
@@ -120,7 +117,7 @@ class TaskViewModel : BaseSharedViewModel<TaskViewState, TaskAction, TaskEvent>(
     }
 
     private fun editProfile() {
-
+        viewAction = TaskAction.OpenEditProfile
     }
 
     private fun sortingChanged() {
