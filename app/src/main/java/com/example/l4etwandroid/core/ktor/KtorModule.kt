@@ -1,6 +1,6 @@
 package com.example.l4etwandroid.core.ktor
 
-import com.example.l4etwandroid.core.utils.Constants.BASE_URL
+import com.example.l4etwandroid.core.utils.Constants.BASE_API_URL
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.DefaultRequest
 import io.ktor.client.plugins.HttpTimeout
@@ -41,7 +41,7 @@ internal val ktorModule = DI.Module("ktorModule") {
             }
 
             defaultRequest {
-                url(BASE_URL)
+                url(BASE_API_URL)
                 header("Content-Type", "application/json; charset=UTF-8")
             }
         }

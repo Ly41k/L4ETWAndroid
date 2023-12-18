@@ -13,7 +13,7 @@ import org.kodein.di.singleton
 
 val profileModule = DI.Module("profileModule") {
     bind<ProfileRepository>() with singleton {
-        ProfileRepositoryImpl(instance(), instance())
+        ProfileRepositoryImpl(instance(), instance(), instance())
     }
 
     bind<KtorProfileRemoteDataSource>() with provider {

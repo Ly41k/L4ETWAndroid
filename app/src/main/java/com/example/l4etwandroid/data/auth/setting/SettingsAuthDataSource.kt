@@ -8,7 +8,10 @@ class SettingsAuthDataSource(private val settings: Settings) {
 
     fun saveToken(token: String) {
         settings.putString(TOKEN_KEY, token)
+    }
 
+    fun clearToken() {
+        settings.putString(TOKEN_KEY, "")
     }
 
     fun fetchToken(): String = settings[TOKEN_KEY, ""]

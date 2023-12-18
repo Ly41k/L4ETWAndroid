@@ -51,6 +51,14 @@ fun TasksView(state: TaskViewState, eventHandler: (TaskEvent) -> Unit) {
         ) {
 
             item {
+                ProfileView(state = state, onEditProfileClick = {
+                    eventHandler(TaskEvent.EditProfileClick)
+                }, onLogoutClick = {
+                    eventHandler(TaskEvent.LogoutClick)
+                })
+            }
+
+            item {
                 Text(
                     text = "List of Tasks",
                     textAlign = TextAlign.Center,

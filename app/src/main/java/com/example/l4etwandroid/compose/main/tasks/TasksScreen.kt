@@ -1,13 +1,16 @@
 package com.example.l4etwandroid.compose.main.tasks
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import com.adeo.kviewmodel.compose.observeAsState
 import com.adeo.kviewmodel.odyssey.StoredViewModel
 import com.example.l4etwandroid.core.navigation.NavigationTree
 import com.example.l4etwandroid.presentation.main.task.TaskViewModel
 import com.example.l4etwandroid.presentation.main.task.models.TaskAction
+import com.example.l4etwandroid.presentation.main.task.models.TaskEvent
 import ru.alexgladkov.odyssey.compose.extensions.present
 import ru.alexgladkov.odyssey.compose.local.LocalRootController
+import ru.alexgladkov.odyssey.core.LaunchFlag
 
 @Composable
 fun TasksScreen() {
@@ -32,6 +35,12 @@ fun TasksScreen() {
             }
 
             null -> {}
+            TaskAction.Logout -> rootController.findRootController().present(
+                screen = NavigationTree.Auth.LoginScreen.name,
+                launchFlag = LaunchFlag.SingleNewTask
+            )
         }
+
+        LaunchedEffect(Unit) { viewModel.obtainEvent(TaskEvent.ScreenLoaded) }
     }
 }

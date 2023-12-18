@@ -89,5 +89,7 @@ dependencies {
     implementation("com.adeo:kviewmodel-compose:$kviewmodelVersion")
     implementation("com.adeo:kviewmodel-odyssey:$kviewmodelVersion")
 
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
 
 }
