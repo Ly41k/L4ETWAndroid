@@ -91,5 +91,16 @@ dependencies {
 
     implementation("io.coil-kt:coil-compose:2.5.0")
 
+    val junitVersion = "5.9.3"
+    val mockkVersion = "1.12.7"
+    val coroutineVersion = "1.7.2"
+    val turbineVersion = "0.12.3"
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion")
+    testImplementation("app.cash.turbine:turbine:$turbineVersion")
+
 
 }

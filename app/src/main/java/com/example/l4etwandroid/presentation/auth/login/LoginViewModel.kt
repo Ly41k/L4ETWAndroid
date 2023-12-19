@@ -8,11 +8,12 @@ import com.example.l4etwandroid.presentation.auth.login.models.LoginEvent
 import com.example.l4etwandroid.presentation.auth.login.models.LoginViewState
 import kotlinx.coroutines.launch
 
-class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEvent>(
-    initialState = LoginViewState(email = "", password = "")
-) {
-
+class LoginViewModel(
     private val authRepository: AuthRepository = Inject.instance()
+) :
+    BaseSharedViewModel<LoginViewState, LoginAction, LoginEvent>(
+        initialState = LoginViewState(email = "", password = "")
+    ) {
 
     init {
         checkUserLoggedIn()
